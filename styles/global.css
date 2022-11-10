@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: #F5F5F5;
+}
+.btn-apply{
+background: #384564;
+border-radius: 8px;
+color:white;
+padding: 18px 30px;
+text-transform: uppercase;
+margin-bottom: 32px;
+}
+.text-color-description{
+   color: #3A4562
+}
+.card-container{
+background: #2A3047;
+border-radius: 8px;
+width: 402px;
+height: 300px;
+margin-left: 131px;
+background-image: url('../public/Shape.png');
+background-repeat: no-repeat;
+}
+.text-color-map{
+    color: #E7EAF0;
+}
+.text-address-color{
+    color: #E8EBF3;
+}
+.png-color{
+    filter: invert(94%) sepia(0%) saturate(0%) hue-rotate(143deg) brightness(99%) contrast(83%);
+}
+
+.employment-btn-style{
+background: rgba(161, 177, 219, 0.317343);
+border: 1px solid rgba(85, 105, 158, 0.3);
+border-radius: 8px;
+width: 240px;
+height: 49px;
+color:#55699E;
+}
+.wid{
+    width: 38%;
+}
+.text-color-benefits{
+background: rgba(255, 207, 0, 0.15);
+border: 1px solid #FFCF00;
+border-radius: 8px;
+color: #988B49;
+width: 240px;
+height: 49px;
+}
+
+.img-attached{
+background: #D8D8D8;
+border-radius: 8px;
+height: 115px;
+width: 209px;
+}
+.return-btn{
+background-color: #e5e5eb;
+border-radius: 8px;
+width: 240px;
+height: 49px;
+color: #3A4562;
+align-items: center;
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 16px;
+position: relative;
+right: 100px;
+margin-top: 86px;
+margin-bottom: 100px;
+}
+.arrow{
+    font-size: 40px;
+    position: relative;
+    top:-7px;
+    
+}
+
+.left{
+    left: 18%;
+}
+
+.pagination{
+    width: 60%;
+}
