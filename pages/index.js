@@ -3,6 +3,7 @@ import A from "../components/A";
 import Head from "next/head";
 import MainContainer from "../components/MainContainer";
 import Image from "next/image";
+import SimpleMap from "../components/map";
 
 export async function getStaticProps(context) {
   const response = await fetch(`http://localhost:3000/api/socials`);
@@ -118,13 +119,15 @@ const Index = ({ users }) => {
                 <p class="xl:relative xl:top-11 xl:left-3">Posted 2 days ago</p>
               </div>
               <div class="flex items-start px-4 py-6 xl:py-6">
-                <Image
-                  src={`${avatar}`}
-                  className="rounded-full object-cover shadow"
-                  width={60}
-                  height={60}
-                  alt="avatar"
-                ></Image>
+                <div class="flex-none">
+                  <Image
+                    src={`${avatar}`}
+                    className="rounded-full object-cover shadow flex-none"
+                    width={60}
+                    height={60}
+                    alt="avatar"
+                  ></Image>
+                </div>
 
                 <div class="ml-6 ">
                   <div class="flex items-center justify-between">
@@ -162,7 +165,6 @@ const Index = ({ users }) => {
           </li>
         ))}
       </ul>
-
       <div class="max-w-2xl mx-auto text-center my-12">
         <nav>
           <ul class="inline-flex items-center bg-white">

@@ -76,10 +76,6 @@ export default function User({ user }) {
           </div>
         </div>
       </div>
-      <div>
-        <h1>Пользователь c id {query.id}</h1>
-        <div>Имя пользователя - {user.name}</div>
-      </div>
     </MainContainer>
   );
 }
