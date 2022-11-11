@@ -107,13 +107,15 @@ const Page = ({ users, totalPosts }) => {
                 <p class="xl:relative xl:top-11 xl:left-3">Posted 2 days ago</p>
               </div>
               <div class="flex items-start px-4 py-6 xl:py-6">
-                <Image
-                  src={`${avatar}`}
-                  className=" rounded-full object-cover shadow"
-                  width={60}
-                  height={60}
-                  alt="avatar"
-                ></Image>
+                <div class="flex-none">
+                  <Image
+                    src={`${avatar}`}
+                    className=" rounded-full object-cover shadow"
+                    width={60}
+                    height={60}
+                    alt="avatar"
+                  ></Image>
+                </div>
 
                 <div class="ml-6 ">
                   <div class="flex items-center justify-between">

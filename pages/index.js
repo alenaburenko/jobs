@@ -1,9 +1,6 @@
 import Link from "next/link";
-import A from "../components/A";
-import Head from "next/head";
 import MainContainer from "../components/MainContainer";
 import Image from "next/image";
-import SimpleMap from "../components/map";
 
 export async function getStaticProps(context) {
   const response = await fetch(`http://localhost:3000/api/socials`);
@@ -132,7 +129,7 @@ const Index = ({ users }) => {
                 <div class="ml-6 ">
                   <div class="flex items-center justify-between">
                     <Link href={`/users/${id}`}>
-                      <a class="text-lg font-semibold text-gray-900 -mt-1">
+                      <a class="text-lg font-semibold text-gray-900 font-proximanova -mt-1">
                         {" "}
                         {title}{" "}
                       </a>

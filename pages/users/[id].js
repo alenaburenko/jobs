@@ -2,77 +2,180 @@ import { useRouter } from "next/router";
 import MainContainer from "../../components/MainContainer";
 
 export default function User({ user }) {
+  const {
+    id,
+    name,
+    title,
+    address,
+    avatar,
+    description,
+    salary,
+    pictures,
+    employment_type,
+    benefits,
+    phone,
+    email,
+  } = user[0];
+  const textDescriptionArray = description.split("\n");
+  const descriptionText = textDescriptionArray[1];
+  const Responsopilities = textDescriptionArray[3];
+  const descriptionTextBottom = textDescriptionArray[4];
+  const descriptionListTitle = textDescriptionArray[6];
+  const descriptionList = textDescriptionArray[7]
+    .split(".")
+    .filter((elem) => elem !== "");
+  // console.log(descriptionList);
   const { query } = useRouter();
   return (
-    <MainContainer keywords={user.name}>
-      <div class="flex items-center justify-center min-h-screen">
+    <MainContainer>
+      <div class="flex items-center justify-center min-h-screen bg-white">
         {" "}
-        <div class="rounded-xl border p-5 shadow-md w-9/12 bg-white">
-          <div class="flex w-full items-center justify-between border-b pb-3">
-            <div class="flex items-center space-x-3">
-              <div class="h-8 w-8 rounded-full bg-slate-400 bg-[url('https://i.pravatar.cc/32')]"></div>
-              <div class="text-lg font-bold text-slate-700">Joe Smith</div>
+        <div class="p-5 w-10/12 bg-white">
+          <div class="flex w-full items-center justify-between border-b border-opacity-10 border-job-text-color pb-3">
+            <div class="text-lg font-bold text-slate-700 font-proximanova">
+              Job Details
             </div>
-            <div class="flex items-center space-x-8">
-              <button class="rounded-2xl border bg-neutral-100 px-3 py-1 text-xs font-semibold">
-                Category
-              </button>
-              <div class="text-xs text-neutral-500">2 hours ago</div>
+          </div>
+          <div class="flex items-center space-x-8 mt-3">
+            <div class="flex">
+              <img src="/star-job.png" alt="star" />
+              <p class=" text-job-discription-color pl-2 font-proximanova">
+                Save to my list
+              </p>
+            </div>
+            <div class="flex items-center">
+              <svg
+                width="18"
+                height="20"
+                viewBox="0 0 18 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  opacity="0.8"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M13.04 14.9096L5.91 10.743C5.96 10.512 6 10.2811 6 10.0402C6 9.7992 5.96 9.56827 5.91 9.33735L12.96 5.21084C13.5 5.71285 14.21 6.0241 15 6.0241C16.66 6.0241 18 4.67871 18 3.01205C18 1.34538 16.66 0 15 0C13.34 0 12 1.34538 12 3.01205C12 3.25301 12.04 3.48394 12.09 3.71486L5.04 7.84137C4.5 7.33936 3.79 7.02811 3 7.02811C1.34 7.02811 0 8.37349 0 10.0402C0 11.7068 1.34 13.0522 3 13.0522C3.79 13.0522 4.5 12.741 5.04 12.239L12.16 16.4157C12.11 16.6265 12.08 16.8474 12.08 17.0683C12.08 18.6847 13.39 20 15 20C16.61 20 17.92 18.6847 17.92 17.0683C17.92 15.4518 16.61 14.1365 15 14.1365C14.24 14.1365 13.56 14.4378 13.04 14.9096Z"
+                  fill="#38415D"
+                />
+              </svg>
+              <p class=" text-job-discription-color pl-2 font-proximanova">
+                Share
+              </p>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center">
+            <p class=" text-job-discription-color font-proximanova">
+              Posted 2 days ago
+            </p>
+            <div>
+              <p class="text-job-text-color font-proximanova">
+                Brutto, per year
+              </p>
+              <p class="text-job-text-color font-proximanova">Є {salary}</p>
             </div>
           </div>
 
           <div class="mt-4 mb-6">
-            <div class="mb-3 text-xl font-bold">
-              Nulla sed leo tempus, feugiat velit vel, rhoncus neque?
-            </div>
+            <div class="mb-3 text-xl font-bold">{title}</div>
             <div class="text-sm text-neutral-600">
-              Aliquam a tristique sapien, nec bibendum urna. Maecenas convallis
-              dignissim turpis, non suscipit mauris interdum at. Morbi sed
-              gravida nisl, a pharetra nulla. Etiam tincidunt turpis leo, ut
-              mollis ipsum consectetur quis. Etiam faucibus est risus, ac
-              condimentum mauris consequat nec. Curabitur eget feugiat massa
+              <p class="font-proximanova text-job-discription-color">
+                {descriptionText}
+              </p>
+              <p class="font-proximanova text-job-discription-color">
+                {Responsopilities}
+              </p>
+              <p class="font-proximanova text-job-discription-color">
+                {descriptionTextBottom}
+              </p>
+              <p class="font-proximanova text-job-discription-color">
+                {descriptionListTitle}
+              </p>
+              <p class="font-proximanova text-job-discription-color">
+                Our physicians enjoy a wide range of benefits, including:
+              </p>
+              <ul>
+                {descriptionList.map((li) => (
+                  <li class="flex">
+                    <div class="flex-none">
+                      <svg
+                        class="inline-block"
+                        width="9"
+                        height="9"
+                        viewBox="0 0 9 9"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          width="9"
+                          height="9"
+                          fill="#384564"
+                          fill-opacity="0.632594"
+                        />
+                      </svg>
+                    </div>
+
+                    <p class="pl-2 font-proximanova text-job-discription-color">
+                      {li}
+                    </p>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-
+          <div class="text-center">
+            <button class="text-white bg-btn-bg-apply-color py-5 px-6 rounded-md font-proximanova">
+              Apply now
+            </button>
+          </div>
+          <div class="w-full items-center justify-between border-b border-opacity-10 border-job-text-color pb-3">
+            <p class="text-lg font-bold text-slate-700 font-proximanova">
+              Attached images
+            </p>
+          </div>
+          <div class="flex">
+            <img src={pictures[0]} alt="picture" />
+            <img src={pictures[0]} alt="picture" />
+            <img class="hidden" src={pictures[0]} alt="" />
+          </div>
+          <div class="w-full items-center justify-between border-b border-opacity-10 border-job-text-color pb-3">
+            <p class="text-lg font-bold text-slate-700 font-proximanova">
+              Additional info
+            </p>
+          </div>
           <div>
-            <div class="flex items-center justify-between text-slate-500">
-              <div class="flex space-x-4 md:space-x-8">
-                <div class="flex cursor-pointer items-center transition hover:text-slate-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="mr-1.5 h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
-                    />
-                  </svg>
-                  <span>125</span>
-                </div>
-                <div class="flex cursor-pointer items-center transition hover:text-slate-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="mr-1.5 h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
-                    />
-                  </svg>
-                  <span>4</span>
-                </div>
-              </div>
+            <p class="font-proximanova text-job-discription-color">
+              Employment type
+            </p>
+            <div>
+              {employment_type.map((button) => (
+                <button class="employment-btn-style text-btn-text-color-employ">
+                  {button}
+                </button>
+              ))}
             </div>
+          </div>
+          <div>
+            <p class="font-proximanova text-job-discription-color">Benefits</p>
+            <div>
+              {benefits.map((button) => (
+                <button class="btn-benefits-style text-btn-text-color-benefit">
+                  {button}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div class="w-full  border-b border-opacity-10 border-job-text-color pb-3">
+            <p class="text-lg font-bold text-slate-700 font-proximanova">
+              Contacts
+            </p>
+          </div>
+          <div class="card-container bg-bg-contacts mt-2 font-proximanova text-center text-text-color-contacts">
+            <p>Department name. {name}.</p>
+            <p>{address}</p>
+            <p>{phone}</p>
+            <p>{email}</p>
           </div>
         </div>
       </div>
