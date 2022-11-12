@@ -20,8 +20,7 @@ margin-bottom: 32px;
 
 .card-container{
 border-radius: 8px;
-width: 100%;
-height: 450px;
+height: 278px;
 background-image: url('../public/Shape.png');
 background-repeat: no-repeat;
 margin-right: 20px;
@@ -84,3 +83,11 @@ margin-bottom: 100px;
 .pagination{
     width: 60%;
 }
+
+/* position: relative;
+    top: -52px;
+    left: 415px;
+    width: 65%;
+    top: 72px;
+    position: relative;
+    */
