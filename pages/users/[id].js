@@ -173,9 +173,19 @@ export default function User({ user }) {
                   </p>
                 </div>
                 <div class="flex mt-6">
-                  <img src={pictures[0]} alt="picture" />
-                  <img src={pictures[0]} alt="picture" />
-                  <img class="hidden" src={pictures[0]} alt="" />
+                  <img
+                    src={pictures[0] + `?rundom=${Math.random()}`}
+                    alt="picture"
+                  />
+                  <img
+                    src={pictures[1] + `?rundom=${Math.random()}`}
+                    alt="picture"
+                  />
+                  <img
+                    class="hidden xl:block"
+                    src={pictures[2] + `?rundom=${Math.random()}`}
+                    alt=""
+                  />
                 </div>
               </div>
               <div>
@@ -190,7 +200,7 @@ export default function User({ user }) {
                   </p>
                   <div class="mb-6">
                     {employment_type.map((button) => (
-                      <button class="employment-btn-style text-btn-text-color-employ">
+                      <button class="employment-btn-style text-btn-text-color-employ py-4 px-3 xl:px-10">
                         {button}
                       </button>
                     ))}
@@ -202,7 +212,7 @@ export default function User({ user }) {
                   </p>
                   <div>
                     {benefits.map((button) => (
-                      <button class="btn-benefits-style text-btn-text-color-benefit">
+                      <button class="btn-benefits-style text-btn-text-color-benefit py-4 px-3 xl:px-10">
                         {button}
                       </button>
                     ))}
