@@ -10,51 +10,41 @@
 body{
     background-color: #F5F5F5;
 }
-.btn-apply{
-border-radius: 8px;
-color:white;
-padding: 18px 30px;
-text-transform: uppercase;
-margin-bottom: 32px;
-}
-
 .card-container{
 border-radius: 8px;
-height: 278px;
+height: 400px;
 background-image: url('../public/Shape.png');
 background-repeat: no-repeat;
 margin-right: 20px;
 }
 
-.png-color{
+/* .png-color{
     filter: invert(94%) sepia(0%) saturate(0%) hue-rotate(143deg) brightness(99%) contrast(83%);
-}
+} */
 
 .employment-btn-style{
 background: rgba(161, 177, 219, 0.317343);
 border: 1px solid rgba(85, 105, 158, 0.3);
 border-radius: 8px;
-width: 122px;
-height: 50px;
+/* width: 122px;
+height: 50px; */
 margin-left: 9px;
 }
-.wid{
-    width: 38%;
-}
+
 .btn-benefits-style{
 background: rgba(255, 207, 0, 0.15);
 border: 1px solid #FFCF00;
 border-radius: 8px;
-width: 120px;
-height: 50px;
+/* width: 120px;
+height: 50px; */
 margin-left: 9px;
 }
 
-.img-attached{
+/* .img-attached{
 border-radius: 8px;
 height: 115px;
 width: 209px;
-}
+} */
 .return-btn{
 border-radius: 8px;
 width: 240px;
@@ -69,25 +59,18 @@ right: 100px;
 margin-top: 86px;
 margin-bottom: 100px;
 }
-.arrow{
+/* .arrow{
     font-size: 40px;
     position: relative;
     top:-7px;
     
-}
+} */
 
-.left{
+/* .left{
     left: 18%;
 }
 
 .pagination{
     width: 60%;
-}
+} */
 
-/* position: relative;
-    top: -52px;
-    left: 415px;
-    width: 65%;
-    top: 72px;
-    position: relative;
-    */

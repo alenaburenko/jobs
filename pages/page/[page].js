@@ -104,7 +104,9 @@ const Page = ({ users, totalPosts }) => {
                     />
                   </svg>
                 </span>
-                <p class="xl:relative xl:top-11 xl:left-3">Posted 2 days ago</p>
+                <p class="font-normal font-proximanova text-jobs-color-text text-sm xl:relative xl:top-11 xl:left-3">
+                  Posted 2 days ago
+                </p>
               </div>
               <div class="flex items-start px-4 py-6 xl:py-6">
                 <div class="flex-none">
@@ -120,14 +122,14 @@ const Page = ({ users, totalPosts }) => {
                 <div class="ml-6 ">
                   <div class="flex items-center justify-between">
                     <Link href={`/users/${id}`}>
-                      <a class="text-lg font-semibold text-gray-900 -mt-1">
+                      <a class="text-lg font-semibold text-job-text-color font-proximanova -mt-1">
                         {" "}
                         {title}{" "}
                       </a>
                     </Link>
                   </div>
 
-                  <p class="mt-2 text-gray-700 text-sm  ">
+                  <p class="mt-2 font-normal font-proximanova text-jobs-color-text text-base">
                     Department name • {name}
                   </p>
                   <div class="mt-2 flex ">
@@ -145,7 +147,9 @@ const Page = ({ users, totalPosts }) => {
                         fill="#878D9D"
                       />
                     </svg>
-                    <p class="ml-2.5">{address}</p>
+                    <p class="ml-2.5 font-normal font-proximanova text-jobs-color-text text-base">
+                      {address}
+                    </p>
                   </div>
                 </div>
               </div>

@@ -22,7 +22,7 @@ module.exports = {
       "text-color-contacts": "#E7EAF0",
     },
     fontFamily: {
-      poppins: ["Roboto", "sans-serif"],
+      roboto: ["Roboto", "sans-serif"],
       proximanova: ["proximanova_bold", "sans-serif"],
     },
     extend: {},

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import MainContainer from "../../components/MainContainer";
+import Iframe from "react-iframe";
 
 export default function User({ user }) {
   const {
@@ -34,13 +35,16 @@ export default function User({ user }) {
         <div class=" xl:max-w-7xl lg:flex p-5 bg-white">
           <div class="xl:max-w-3xl">
             <div class="flex w-full items-center justify-between border-b border-opacity-10 border-job-text-color pb-3">
-              <div class="text-lg font-bold text-slate-700 font-proximanova">
+              <div class="text-2xl font-bold text-job-text-color font-proximanova">
                 Job Details
               </div>
             </div>
-            <div class="flex items-center space-x-8 mt-3">
-              <div class="flex">
-                <img class="xl:hidden" src="/star-job.png" alt="star" />
+            <div class="flex items-center space-x-8 mt-3 xl:relative xl:bottom-14 xl:left-2/3">
+              <div class="flex items-center">
+                <div class="flex-none">
+                  <img class="xl:hidden" src="/star-job.png" alt="star" />
+                </div>
+
                 <svg
                   class="hidden xl:block"
                   width="18"
@@ -57,7 +61,7 @@ export default function User({ user }) {
                     stroke-width="2"
                   />
                 </svg>
-                <p class=" text-job-discription-color pl-2 font-proximanova">
+                <p class=" text-job-discription-color pl-2 font-proximanova xl:font-roboto font-normal text-lg">
                   Save to my list
                 </p>
               </div>
@@ -78,48 +82,53 @@ export default function User({ user }) {
                   />
                 </svg>
 
-                <p class=" text-job-discription-color pl-2 font-proximanova">
+                <p class=" text-job-discription-color pl-2 font-proximanova xl:font-roboto font-normal text-lg">
                   Share
                 </p>
               </div>
             </div>
-            <div class="hidden xl:block">
-              <button class="text-white bg-btn-bg-apply-color py-5 px-6 rounded-md font-proximanova">
+            <div class="hidden xl:block mb-8 ">
+              <button class="text-white uppercase font-semibold text-xs bg-btn-bg-apply-color py-5 px-8 rounded-md font-proximanova">
                 Apply now
               </button>
             </div>
             <div class="mt-4 mb-6">
-              <div class="lg:flex xl:justify-between">
-                <div class="xl:w-9/12 mb-3 text-xl font-bold">{title}</div>
+              <div class="lg:flex xl:justify-between items-start">
+                <div class="xl:w-9/12 mb-2 text-2xl font-bold font-proximanova text-job-text-color">
+                  {title}
+                </div>
                 <div class=" flex justify-between items-center">
                   <p class="xl:hidden text-job-discription-color font-proximanova">
                     Posted 2 days ago
                   </p>
-                  <div>
-                    <p class="text-job-text-color font-proximanova">
+                  <div class="xl:flex xl:flex-col-reverse">
+                    <p class="text-job-text-color font-proximanova font-normal text-lg">
                       Brutto, per year
                     </p>
-                    <p class="text-job-text-color font-proximanova">
-                      Є {salary}
+                    <p class="text-job-text-color font-proximanova font-bold text-xl">
+                      &#8364;&nbsp;{salary}
                     </p>
                   </div>
                 </div>
               </div>
+              <p class="hidden xl:block text-job-discription-color font-proximanova mb-2 xl:font-roboto font-normal text-lg">
+                Posted 2 days ago
+              </p>
 
-              <div class="text-sm text-neutral-600">
-                <p class="font-proximanova text-job-discription-color">
+              <div class="text-job-text-color">
+                <p class="font-proximanova text-job-discription-color xl:font-roboto text-lg mb-7">
                   {descriptionText}
                 </p>
-                <p class="font-proximanova text-job-discription-color">
+                <p class="font-proximanova text-job-discription-color font-bold text-xl mb-5">
                   {Responsopilities}
                 </p>
-                <p class="font-proximanova text-job-discription-color">
+                <p class="font-proximanova text-job-discription-color xl:font-roboto text-lg mb-7">
                   {descriptionTextBottom}
                 </p>
-                <p class="font-proximanova text-job-discription-color">
+                <p class="font-proximanova text-job-discription-color font-bold text-xl mb-5">
                   {descriptionListTitle}
                 </p>
-                <p class="font-proximanova text-job-discription-color">
+                <p class="font-proximanova text-job-discription-color xl:font-roboto text-lg">
                   Our physicians enjoy a wide range of benefits, including:
                 </p>
                 <ul>
@@ -143,7 +152,7 @@ export default function User({ user }) {
                         </svg>
                       </div>
 
-                      <p class="pl-2 font-proximanova text-job-discription-color">
+                      <p class="pl-2 font-proximanova text-job-discription-color xl:font-roboto text-lg">
                         {li}
                       </p>
                     </li>
@@ -152,49 +161,56 @@ export default function User({ user }) {
               </div>
             </div>
             <div class="text-center xl:text-left">
-              <button class="text-white bg-btn-bg-apply-color py-5 px-6 rounded-md font-proximanova">
+              <button class="text-white  uppercase bg-btn-bg-apply-color py-5 px-8 rounded-md font-proximanova font-semibold text-xs">
                 Apply now
               </button>
             </div>
-            <div class="w-full items-center justify-between border-b border-opacity-10 border-job-text-color pb-3">
-              <p class="text-lg font-bold text-slate-700 font-proximanova">
-                Attached images
-              </p>
-            </div>
-            <div class="flex">
-              <img src={pictures[0]} alt="picture" />
-              <img src={pictures[0]} alt="picture" />
-              <img class="hidden" src={pictures[0]} alt="" />
-            </div>
-            <div class="w-full items-center justify-between border-b border-opacity-10 border-job-text-color pb-3">
-              <p class="text-lg font-bold text-slate-700 font-proximanova">
-                Additional info
-              </p>
-            </div>
-            <div>
-              <p class="font-proximanova text-job-discription-color">
-                Employment type
-              </p>
+            <div class="xl:flex xl:flex-col-reverse">
               <div>
-                {employment_type.map((button) => (
-                  <button class="employment-btn-style text-btn-text-color-employ">
-                    {button}
-                  </button>
-                ))}
+                <div class="w-full items-center justify-between border-b border-opacity-10 border-job-text-color pb-3">
+                  <p class="text-3xl font-bold font-proximanova text-job-discription-color mt-20">
+                    Attached images
+                  </p>
+                </div>
+                <div class="flex mt-6">
+                  <img src={pictures[0]} alt="picture" />
+                  <img src={pictures[0]} alt="picture" />
+                  <img class="hidden" src={pictures[0]} alt="" />
+                </div>
+              </div>
+              <div>
+                <div class="w-full items-center justify-between border-b border-opacity-10 border-job-text-color pb-3">
+                  <p class="text-3xl font-bold font-proximanova text-job-discription-color mt-20">
+                    Additional info
+                  </p>
+                </div>
+                <div>
+                  <p class="font-proximanova text-job-discription-color mt-6 mb-3">
+                    Employment type
+                  </p>
+                  <div class="mb-6">
+                    {employment_type.map((button) => (
+                      <button class="employment-btn-style text-btn-text-color-employ">
+                        {button}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p class="font-proximanova text-job-discription-color mb-3">
+                    Benefits
+                  </p>
+                  <div>
+                    {benefits.map((button) => (
+                      <button class="btn-benefits-style text-btn-text-color-benefit">
+                        {button}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-            <div>
-              <p class="font-proximanova text-job-discription-color">
-                Benefits
-              </p>
-              <div>
-                {benefits.map((button) => (
-                  <button class="btn-benefits-style text-btn-text-color-benefit">
-                    {button}
-                  </button>
-                ))}
-              </div>
-            </div>
+
             <div>
               <button class="hidden xl:flex font-proximanova w-52 rounded-lg text-job-text-color bg-opacity-10 bg-job-text-color">
                 <Link href={`/`}>
@@ -205,16 +221,16 @@ export default function User({ user }) {
                 </Link>
               </button>
             </div>
-            <div class="xl:hidden w-full  border-b border-opacity-10  border-job-text-color pb-3">
+            <div class="xl:hidden w-full  border-b border-opacity-10 border-job-text-color pb-3">
               <p class="text-lg font-bold text-slate-700 font-proximanova">
                 Contacts
               </p>
             </div>
           </div>
-          <div class="card-container flex justify-center xl:ml-28 xl:w-4/6 bg-bg-contacts mt-2 font-proximanova text-text-color-contacts">
-            <div>
-              <p>Department name. {name}.</p>
-              <p class="flex justify-center items-center">
+          <div class="card-container flex  items-center flex-col xl:ml-28 xl:w-4/6 bg-bg-contacts mt-2 font-proximanova text-text-color-contacts">
+            <div class="mt-8">
+              <p class="font-bold text-xl pb-2">Department name. {name}.</p>
+              <p class="flex items-center font-normal text-lg pb-2">
                 <svg
                   width="13"
                   height="18"
@@ -229,10 +245,19 @@ export default function User({ user }) {
                     fill="#878D9D"
                   />
                 </svg>
-                <span class="pl-2">{address}</span>
+                <span class="pl-2 font-normal text-lg pb-2">{address}</span>
               </p>
-              <p>{phone}</p>
-              <p>{email}</p>
+              <p class="font-normal text-lg">{phone}</p>
+              <p class="font-normal text-lg">{email}</p>
+            </div>
+            <div class="w-full relative top-7">
+              <Iframe
+                url="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+                width="100%"
+                height="220px"
+                id=""
+                className=""
+              />
             </div>
           </div>
         </div>
